@@ -1,5 +1,5 @@
 export const allBooks=async()=>{
-    const res=await fetch('/bookData.json');
+    const res=await fetch('http://localhost:3000/bookData.json');
     const data=await res.json();
     return data;
 }
