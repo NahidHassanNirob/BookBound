@@ -51,7 +51,7 @@
     "description": "A classic story about the American dream, love, and social class in the 1920s.",
     "category": "Story",
     "available_quantity": 7,
-    "image_url": "https://images.unsplash.com/photo-1543004218-ee141104308d?q=80&w=500&auto=format&fit=crop"
+    "image_url": "https://img.drz.lazcdn.com/static/bd/p/e0ae8476bc4cb83a7c23c1df010bdd34.jpg_720x720q80.jpg"
   },
   {
     "id": 7,
@@ -84,7 +84,7 @@
     "id": 10,
     "title": "Pragmatic Programmer",
     "author": "Andrew Hunt",
-    "description": "Your guide to becoming a professional developer, covering topics from career development to architectural techniques.",
+    "description": "Your guide to becoming a professional developer, covering topics from career development",
     "category": "Tech",
     "available_quantity": 8,
     "image_url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=500&auto=format&fit=crop"
@@ -102,7 +102,7 @@
     "id": 12,
     "title": "The Kite Runner",
     "author": "Khaled Hosseini",
-    "description": "A powerful story of friendship, betrayal, and redemption set against the backdrop of war-torn Afghanistan.",
+    "description": "A powerful story of friendship, betrayal, and redemption set against the backdrop.",
     "category": "Story",
     "available_quantity": 9,
     "image_url": "https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=500&auto=format&fit=crop"
