@@ -6,7 +6,8 @@ import { Geist, Geist_Mono, Outfit, Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import { Toaster } from 'sonner';
-import Footer from '@/components/Footer';
+import { Footer } from '@/components/Footer';
+
 
 const geistRoboto = Outfit({
   subsets: ["latin"],
