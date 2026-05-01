@@ -58,7 +58,7 @@ const Navbar = () => {
         </div>
 
       
-        <ul className="hidden items-center justify-center gap-8 md:flex font-medium">
+        <ul className="hidden  items-center justify-center gap-4 md:flex font-medium">
           {links}
         </ul>
 

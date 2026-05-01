@@ -5,6 +5,8 @@ dns.setServers(['8.8.8.8',"8.8.4.4"])
 import { Geist, Geist_Mono, Outfit, Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
+import { Toaster } from 'sonner';
+import Footer from '@/components/Footer';
 
 const geistRoboto = Outfit({
   subsets: ["latin"],
@@ -28,7 +30,9 @@ export default function RootLayout({ children }) {
         <Navbar></Navbar>
         <main>
           {children}
+          <Toaster position="top-center" richColors />
         </main>
+        <Footer></Footer>
         </body>
     </html>
   );

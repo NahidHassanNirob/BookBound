@@ -11,6 +11,8 @@ import {
 } from "@heroui/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion"; 
+import { toast } from "sonner";
 
 const SignUpPage = () => {
   const router = useRouter();
@@ -29,12 +31,13 @@ const SignUpPage = () => {
       password,
       callbackURL: "/"
     }, {
-      onSuccess: () => {
-        router.push("/");
+      onSuccess:async () => {
+        await authClient.signOut()
+        router.push("/signin");
         router.refresh();
       },
       onError: (ctx) => {
-        alert(ctx.error.message);
+        toast.error(ctx.error.message)
       }
     });
   };
@@ -47,26 +50,32 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-10 flex justify-center items-center">
-      <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md border border-gray-100">
+    <div className="max-w-6xl mx-auto px-6 pt-5 md:pt-10 flex justify-center items-center">
+      
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md border border-gray-100"
+      >
         <Form className="flex flex-col gap-4 w-full" onSubmit={handelSignUp}>
           <h2 className="font-bold text-2xl text-center text-gray-800">Create Account</h2>
           
           <TextField isRequired name="name" className="w-full">
             <Label className="text-sm font-medium">Full Name</Label>
-            <Input className="h-11" placeholder="john doe" />
+            <Input className="h-11 w-full" placeholder="john doe" />
             <FieldError className="text-xs text-red-500" />
           </TextField>
 
           <TextField isRequired name="photo" type="url" className="w-full">
             <Label className="text-sm font-medium">Photo URL</Label>
-            <Input className="h-11" placeholder="https://image.png" />
+            <Input className="h-11 w-full" placeholder="https://image.png" />
             <FieldError className="text-xs text-red-500" />
           </TextField>
 
           <TextField isRequired name="email" type="email" className="w-full">
             <Label className="text-sm font-medium">Email Address</Label>
-            <Input className="h-11" placeholder="john@example.com" />
+            <Input className="h-11 w-full" placeholder="john@example.com" />
             <FieldError className="text-xs text-red-500" />
           </TextField>
 
@@ -83,12 +92,12 @@ const SignUpPage = () => {
             }}
           >
             <Label className="text-sm font-medium">Password</Label>
-            <Input className="h-11" placeholder="••••••••" />
+            <Input className="h-11 w-full" placeholder="••••••••" />
             <Description className="text-[10px] text-gray-400">8+ chars, 1 uppercase, 1 number</Description>
             <FieldError className="text-xs text-red-500" />
           </TextField>
 
-          <Button className="bg-green-600 text-white w-full h-11 font-bold mt-2" type="submit">
+          <Button className="bg-green-600 text-white w-full h-11 font-bold mt-2 hover:opacity-90 transition-opacity" type="submit">
             Create Account
           </Button>
 
@@ -105,7 +114,7 @@ const SignUpPage = () => {
 
         <button 
           onClick={googleSignin}
-          className="flex items-center justify-center gap-3 w-full border border-gray-200 py-2.5 rounded-xl text-sm font-medium hover:bg-gray-50 transition-all"
+          className="flex items-center justify-center gap-3 w-full border border-gray-200 py-2.5 rounded-xl text-sm font-medium hover:bg-gray-50 transition-all active:scale-95"
         >
           <svg width="18" height="18" viewBox="0 0 512 512">
             <path fill="#4285f4" d="M416 230c0-14-1-27-3-40H256v80h90c-4 22-17 41-36 53v44h58c34-31 54-77 54-127z" />
@@ -115,7 +124,7 @@ const SignUpPage = () => {
           </svg>
           Sign up with Google
         </button>
-      </div>
+      </motion.div>
     </div>
   );
 };

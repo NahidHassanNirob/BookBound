@@ -3,12 +3,14 @@
 import { authClient } from "@/lib/authClient";
 import Image from "next/image";
 import {
+  Settings,
   Mail,
   ShieldCheck,
   Camera,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@heroui/react";
+import Link from "next/link";
 
 const ProfilePage = () => {
   const { data, isPending } = authClient.useSession();
@@ -126,7 +128,7 @@ const ProfilePage = () => {
 
               <motion.div variants={itemVariants} className="flex gap-3">
                  
-                 <Button className="rounded-xl">Edit Profile</Button>
+                <Link href={'/updateProfile'}> <Button className="rounded-xl"><Settings></Settings>  Update Profile</Button></Link>
               </motion.div>
             </div>
 

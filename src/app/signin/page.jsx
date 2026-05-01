@@ -7,10 +7,11 @@ import {
   Label, 
   TextField, 
   FieldError, 
-  Description 
 } from "@heroui/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion"; // Framer Motion import
+import { toast } from "sonner";
 
 const SignInPage = () => {
   const router = useRouter();
@@ -26,11 +27,13 @@ const SignInPage = () => {
       callbackURL: "/"
     }, {
       onSuccess: () => {
+        toast.success('sign in successfully')
         router.push("/");
         router.refresh();
       },
       onError: (ctx) => {
-        alert(ctx.error.message);
+        toast.error(ctx.error.message)
+        
       }
     });
   };
@@ -39,12 +42,18 @@ const SignInPage = () => {
     await authClient.signIn.social({
       provider: 'google',
       callbackURL: "/"
-    });
+    },);
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-6 min-h-[80vh] flex justify-center items-center">
-      <div className="bg-white rounded-xl shadow-lg p-8 w-full max-w-md border border-gray-100">
+    <div className="max-w-6xl mx-auto px-6 pt-5 md:pt-10 flex justify-center items-center">
+      {/* Motion wrapper added here */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="bg-white rounded-xl shadow-lg p-8 w-full max-w-md border border-gray-100"
+      >
         <Form className="flex flex-col gap-4 w-full" onSubmit={handelSignIn}>
           <h2 className="font-bold text-2xl text-center text-gray-800 mb-2">Welcome Back</h2>
           
@@ -87,7 +96,7 @@ const SignInPage = () => {
           </svg>
           Continue with Google
         </button>
-      </div>
+      </motion.div>
     </div>
   );
 };
