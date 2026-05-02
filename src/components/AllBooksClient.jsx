@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import BookCard from "@/components/Home/BookCard";
 import { Button } from "@heroui/react";
+import BookNotFound from "./BookNotFound";
 
 const AllBooksClient = ({ books }) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -68,9 +69,7 @@ const AllBooksClient = ({ books }) => {
               ))}
             </div>
           ) : (
-            <div className="text-center py-20 bg-gray-50 rounded-3xl border-2 border-dashed border-gray-200">
-              <p className="text-gray-400 text-xl italic">No books found!</p>
-            </div>
+            <BookNotFound></BookNotFound>
           )}
         </div>
       </div>
