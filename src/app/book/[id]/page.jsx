@@ -1,4 +1,5 @@
 import BookDetailsClient from "@/components/BookDetailsClient";
+import BookNotFound from "@/components/BookNotFound";
 import { allBooks } from "@/lib/dataFetch";
 
 const BookDetailsPage = async ({ params }) => {
@@ -8,9 +9,7 @@ const BookDetailsPage = async ({ params }) => {
 
   if (!match) {
     return (
-      <div className="text-center py-20 text-2xl font-light italic">
-        Book not found!
-      </div>
+      <BookNotFound></BookNotFound>
     );
   }
 
