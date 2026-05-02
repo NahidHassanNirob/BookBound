@@ -9,6 +9,7 @@ import { Toaster } from 'sonner';
 import { Footer } from '@/components/Footer';
 
 
+
 const geistRoboto = Outfit({
   subsets: ["latin"],
 });

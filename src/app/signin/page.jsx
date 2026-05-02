@@ -74,7 +74,7 @@ const SignInPage = () => {
           </Button>
 
           <p className="text-center text-sm text-gray-500">
-            Don't have an account? <Link href="/signup" className="text-blue-600 font-semibold hover:underline">Sign Up</Link>
+            Dont have an account? <Link href="/signup" className="text-blue-600 font-semibold hover:underline">Sign Up</Link>
           </p>
 
           <div className="relative flex items-center py-2">
