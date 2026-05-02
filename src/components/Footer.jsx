@@ -56,7 +56,7 @@ export function Footer() {
           viewport={{ once: false, amount: 0.2 }}
           className="grid grid-cols-1 gap-12 sm:grid-cols-3"
         >
-          {/* Section 1: Branding & Bio */}
+        
           <motion.div variants={itemVariants} className="space-y-4">
             <div>
               <motion.h2
@@ -73,7 +73,7 @@ export function Footer() {
             </p>
           </motion.div>
 
-          {/* Section 2: Navigation */}
+          
           <motion.div variants={itemVariants} className="space-y-4">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
               Quick Links
@@ -96,7 +96,7 @@ export function Footer() {
             </ul>
           </motion.div>
 
-          {/* Section 3: Socials & Connect */}
+          
           <motion.div variants={itemVariants} className="space-y-4">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
               Let&apos;s Connect

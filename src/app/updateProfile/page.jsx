@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import { motion } from "framer-motion"; // Framer motion import
 import { UserCircle, Image as ImageIcon } from "lucide-react"; // Icons for better UI
+import { toast } from "sonner";
 
 const UpdateProfilePage = () => {
   const router = useRouter();
@@ -26,8 +27,12 @@ const UpdateProfilePage = () => {
       image: photo,
     }, {
       onSuccess: () => {
+        toast.success('profile updated succesfully')
         router.push('/profile');
         router.refresh();
+      },
+      onError:(e)=>{
+        toast.error(e.error.message)
       }
     });
   };

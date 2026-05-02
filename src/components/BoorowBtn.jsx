@@ -1,23 +1,23 @@
-'use client'
+"use client";
 
 import { authClient } from "@/lib/authClient";
 import { useRouter } from "next/navigation";
-
+import { toast } from "sonner";
 
 const BoorowBtn = () => {
-    const route=useRouter();
-    const {data:session}=authClient.useSession()
-    const BtnClick=()=>{
-          if(session?.user){
-             return alert('success')
-          }
-          else{
-route.push('/signin')
-          }
+  const route = useRouter();
+  const { data: session } = authClient.useSession();
+  const BtnClick = () => {
+    if (session?.user) {
+      return toast.success('succesfully boorow');
+    } else {
+      route.push("/signin");
+      route.refresh()
     }
+  };
   return (
     <button
-     onClick={BtnClick}
+      onClick={BtnClick}
       size="lg"
       className="bg-slate-900 btn text-white font-bold  hover:bg-blue-600 transition-all"
     >

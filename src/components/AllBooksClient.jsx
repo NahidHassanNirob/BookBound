@@ -7,10 +7,10 @@ const AllBooksClient = ({ books }) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
-  // ১. ইউনিক ক্যাটাগরি লিস্ট তৈরি করা
+  
   const categories = ["All", ...new Set(books.map((book) => book.category))];
 
-  // ২. ফিল্টারিং লজিক (ক্যাটাগরি এবং সার্চ একসাথে কাজ করবে)
+  
   const filteredBooks = books.filter((book) => {
     const matchesCategory = selectedCategory === "All" || book.category === selectedCategory;
     const matchesSearch = book.title.toLowerCase().includes(searchQuery.toLowerCase());

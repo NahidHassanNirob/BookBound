@@ -50,7 +50,7 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-6 pt-5 md:pt-10 flex justify-center items-center">
+    <div className="max-w-6xl mx-auto px-6 py-5 md:py-10 flex justify-center items-center">
       
       <motion.div 
         initial={{ opacity: 0, scale: 0.95, y: 20 }}

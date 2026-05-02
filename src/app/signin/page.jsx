@@ -46,7 +46,7 @@ const SignInPage = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-6 pt-5 md:pt-10 flex justify-center items-center">
+    <div className="max-w-6xl mx-auto px-6 py-5 md:py-10 flex justify-center items-center">
       {/* Motion wrapper added here */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
